@@ -81,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590523956792</updated>
-      <workItem from="1590523958044" duration="1309000" />
+      <workItem from="1590523958044" duration="1615000" />
     </task>
     <task id="LOCAL‎00001" summary="Added project files&#10;Exactly as downloaded from Moodle">
       <created>1590524259750</created>
@@ -101,7 +101,13 @@
       <option name="presentableId" value="LOCAL‎00003" />
       <updated>1590525087092</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎00004" summary="committed idea files">
+      <created>1590525441341</created>
+      <option name="number" value="LOCAL‎00004" />
+      <option name="presentableId" value="LOCAL‎00004" />
+      <updated>1590525441341</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,7 +128,8 @@
     <MESSAGE value="Added project files&#10;Exactly as downloaded from Moodle" />
     <MESSAGE value="Added .gitignore to repository" />
     <MESSAGE value="Added .idea files to .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added .idea files to .gitignore" />
+    <MESSAGE value="committed idea files" />
+    <option name="LAST_COMMIT_MESSAGE" value="committed idea files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" width="525" height="408" key="#Notifications" timestamp="1590524416284">
@@ -133,10 +140,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590524566646" />
-    <state x="521" y="95" key="CommitChangelistDialog2" timestamp="1590525086644">
+    <state x="521" y="95" key="CommitChangelistDialog2" timestamp="1590525440818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="521" y="95" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525086644" />
+    <state x="521" y="95" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525440818" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1590524490757">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -157,10 +164,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590524309547" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1590525096214">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1590525541190">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525096214" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525541190" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1590525267453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
