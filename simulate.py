@@ -64,10 +64,12 @@ def vertices_input(graph, udp_port_master):
 def main():
     # Constructs and simulates a graph.
 
-    try:
-        graph_size = int(input('Enter graph size \n'))
-    except:
-        print('ERROR--graph size')
+    # try:
+    #     graph_size = int(input('Enter graph size \n'))
+    # except:
+    #     print('ERROR--graph size')
+
+    graph_size = 5
 
     random.seed(45970)
     pick_edge_prob = 0.8
