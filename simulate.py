@@ -85,11 +85,10 @@ def main():
 
     for thread in threads:
         thread.start()
-
-    synchro = synchronizer(graph_size=graph_size, udp_port=udp_port_start)
-
     for thread in threads:
         thread.join()
+
+    synchro = synchronizer(graph_size=graph_size, udp_port=udp_port_start)
 
     return graph
 

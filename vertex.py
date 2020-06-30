@@ -98,3 +98,14 @@ class Vertex:
         # self.send_message_TCP('next_' + str(self.ID), self.master_IP, self.master_UDP)
         # TODO die
 
+    def init_parent_socket(self):
+        parent_socket = socket(AF_INET, SOCK_STREAM)
+        parent_socket.bind((self.in_neighbour_IP, self.in_neighbour_TCP))
+        conn, _ = parent_socket.accept()
+        self.parent_conn = conn
+
+    def init_children_sockets(self):
+        for child_ip, child_tcp in zip(self.out_neighbours_IP, self.out_neighbours_TCP):
+            sock_tcp = socket(AF_INET, SOCK_STREAM)
+            sock_tcp.connect((child_ip, child_tcp))
+            self.children_sockets.append(sock_tcp)
