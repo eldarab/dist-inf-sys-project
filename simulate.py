@@ -3,7 +3,6 @@ from math import log2, ceil
 from itertools import permutations
 from vertex import vertex
 from threading import Thread
-from master import synchronizer
 
 
 def build_graph(graph_size, pick_edge_prob, udp_port, tcp_port):
@@ -87,8 +86,6 @@ def main():
         thread.start()
     for thread in threads:
         thread.join()
-
-    synchro = synchronizer(graph_size=graph_size, udp_port=udp_port_start)
 
     return graph
 

@@ -1,24 +1,27 @@
+from socket import socket, error, AF_INET, SOCK_DGRAM, SOCK_STREAM, SHUT_RDWR, SHUT_WR
+from threading import Thread, Lock
 import math
-from socket import socket, AF_INET, SOCK_DGRAM, SOCK_STREAM
-from threading import Thread
-from warnings import warn
+
 INPUT_FILEPATH_PREFIX = './simulation_files/input_vertex_'
 OUTPUT_FILEPATH_PREFIX = './simulation_files/input_vertex_'
 FILEPATH_SUFFIX = '.txt'
-BUFF_SIZE = 4096
-
-# TODO why no root?
+MAX_UDP_MSG = 4096
+LOCALHOST_IP = '127.0.0.1'
 
 
 def vertex(ID):
     filepath = INPUT_FILEPATH_PREFIX + str(ID) + FILEPATH_SUFFIX
     v = Vertex(filepath, ID)
+    while True:
+        cur_round = v.socket_to_master.recvfrom(MAX_UDP_MSG)[0].decode()
+        msg = 'next_' + str(v.ID)
+        v.socket_to_master.sendto(msg.encode(), (LOCALHOST_IP, v.master_UDP))
 
 
 class Vertex:
     def __init__(self, filepath, ID):
         with open(filepath, 'r') as f:
-            self.ID = ID  # TODO add ID
+            self.ID = ID
             self.n_graph_nodes = int(f.readline()[:-1])
             self.master_UDP = int(f.readline()[:-1])
             self.master_IP = f.readline()[:-1]  # IP is string
@@ -43,6 +46,9 @@ class Vertex:
             self.parent_color = None
             self.color_len = len(self.ID)
 
+            self.socket_to_master = socket(AF_INET, SOCK_DGRAM)
+            self.socket_to_master.bind((LOCALHOST_IP, self.my_UDP))
+
     def send_message_TCP(self, message, ip, port):
         assert type(port) == int
         with socket(AF_INET, SOCK_STREAM) as sock_tcp:
@@ -53,18 +59,11 @@ class Vertex:
         with open(output_filepath, 'a') as f:
             f.write(message + '_' + str(port))
 
-    def listen_to_master(self):
-        # TODO maybe put lock here
-        with socket(AF_INET, SOCK_DGRAM) as sock_udp:
-            sock_udp.bind(('127.0.0.1', self.my_UDP))  # TODO why use hard coded IP
-            data, _ = sock_udp.recvfrom(BUFF_SIZE)
-            return data.decode()
-
     def listen_to_parent(self):
         with socket(AF_INET, SOCK_STREAM) as sock_tcp:
             sock_tcp.bind((self.in_neighbour_IP, self.in_neighbour_TCP))
             conn, addr = sock_tcp.accept()
-            msg = conn.recv(BUFF_SIZE)
+            msg = conn.recv(MAX_UDP_MSG)
             self.parent_color = msg.decode()
 
     def send_color_to_children(self):

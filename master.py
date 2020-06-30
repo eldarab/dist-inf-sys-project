@@ -100,3 +100,8 @@ def main():
 
     udp_port_start = 31000
     synchronizer(graph_size, udp_port_start)
+
+
+if __name__ == '__main__':
+    main()
+
