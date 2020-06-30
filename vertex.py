@@ -53,10 +53,10 @@ class Vertex:
             self.color_len = len(self.ID)
 
     def send_message_TCP(self, message, ip, port):
-        sock_tcp = socket(AF_INET, SOCK_STREAM)
-        sock_tcp.bind((ip, int(port)))
-        sock_tcp.sendto(str(message).encode(), (ip, int(port)))
-        sock_tcp.close()
+        assert type(port) == int
+        with socket(AF_INET, SOCK_STREAM) as sock_tcp:
+            sock_tcp.connect((ip, port))
+            sock_tcp.sendall(str(message).encode())
 
         output_filepath = OUTPUT_FILEPATH_PREFIX + str(self.ID) + FILEPATH_SUFFIX
         with open(output_filepath, 'a') as f:
@@ -64,19 +64,17 @@ class Vertex:
 
     def listen_to_master(self):
         # TODO maybe put lock here
-        sock_udp = socket(AF_INET, SOCK_DGRAM)
-        sock_udp.bind(('127.0.0.1', self.my_UDP))  # TODO why use hard coded IP
-        # sock_udp.listen()  # TODO maybe we need this?
-        data, addr = sock_udp.recvfrom(BUFF_SIZE)
-        sock_udp.close()
-        return repr(data)
+        with socket(AF_INET, SOCK_DGRAM) as sock_udp:
+            sock_udp.bind(('127.0.0.1', self.my_UDP))  # TODO why use hard coded IP
+            data, _ = sock_udp.recvfrom(BUFF_SIZE)
+            return data.decode()
 
     def listen_to_parent(self):
-        sock_tcp = socket(AF_INET, SOCK_STREAM)
-        sock_tcp.bind((self.in_neighbour_IP, str(self.in_neighbour_TCP)))
-        msg = sock_tcp.recvfrom(BUFF_SIZE)
-        sock_tcp.close()
-        self.parent_color = repr(msg)
+        with socket(AF_INET, SOCK_STREAM) as sock_tcp:
+            sock_tcp.bind((self.in_neighbour_IP, str(self.in_neighbour_TCP)))
+            conn, addr = sock_tcp.accept()
+            msg = conn.recv(BUFF_SIZE)
+            self.parent_color = msg.decode()
 
     def send_color_to_children(self):
         threads = []
