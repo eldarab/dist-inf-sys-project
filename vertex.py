@@ -7,21 +7,12 @@ OUTPUT_FILEPATH_PREFIX = './simulation_files/input_vertex_'
 FILEPATH_SUFFIX = '.txt'
 BUFF_SIZE = 4096
 
+# TODO why no root?
+
 
 def vertex(ID):
     filepath = INPUT_FILEPATH_PREFIX + str(ID) + FILEPATH_SUFFIX
     v = Vertex(filepath, ID)
-    while v.color_len > 3:
-        master_msg = v.listen_to_master()  # master sends current round
-        if master_msg == 'DIE':
-            break
-        parent_listener = Thread(target=v.listen_to_parent)
-        parent_listener.start()
-        v.send_color_to_children()
-        parent_listener.join()
-        v_color = v.update_color()
-        assert v_color != -1
-        v.finish_round()
 
 
 class Vertex:
@@ -44,7 +35,7 @@ class Vertex:
             self.out_neighbours_IP = []
             line = f.readline()[:-1]
             while line != '*':
-                self.out_neighbours_TCP.append(line)
+                self.out_neighbours_TCP.append(int(line))
                 self.out_neighbours_IP.append(f.readline()[:-1])
                 line = f.readline()[:-1]
 
@@ -71,7 +62,7 @@ class Vertex:
 
     def listen_to_parent(self):
         with socket(AF_INET, SOCK_STREAM) as sock_tcp:
-            sock_tcp.bind((self.in_neighbour_IP, str(self.in_neighbour_TCP)))
+            sock_tcp.bind((self.in_neighbour_IP, self.in_neighbour_TCP))
             conn, addr = sock_tcp.accept()
             msg = conn.recv(BUFF_SIZE)
             self.parent_color = msg.decode()
@@ -107,5 +98,3 @@ class Vertex:
         # self.send_message_TCP('next_' + str(self.ID), self.master_IP, self.master_UDP)
         # TODO die
 
-# v0001 = Vertex('./files/input_vertex_0001.txt')
-# pass
