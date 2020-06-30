@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ac3165d8-6360-4b6d-89bd-02e605790ab4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertex.py" beforeDir="false" afterPath="$PROJECT_DIR$/vertex.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +139,7 @@
       <updated>1590523956792</updated>
       <workItem from="1590523958044" duration="2139000" />
       <workItem from="1593503545214" duration="3066000" />
+      <workItem from="1593507115201" duration="598000" />
     </task>
     <task id="LOCAL‎00001" summary="Added project files&#10;Exactly as downloaded from Moodle">
       <created>1590524259750</created>
@@ -271,8 +271,8 @@
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593504605787" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dist_inf_sys_project$vertex.coverage" NAME="vertex Coverage Results" MODIFIED="1593506108252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dist_inf_sys_project$simulate.coverage" NAME="simulate Coverage Results" MODIFIED="1593505450266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dist_inf_sys_project$master.coverage" NAME="master Coverage Results" MODIFIED="1590524466089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dist_inf_sys_project$vertex.coverage" NAME="vertex Coverage Results" MODIFIED="1593506108252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
