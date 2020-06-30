@@ -3,6 +3,7 @@ from math import log2, ceil
 from itertools import permutations
 from vertex import vertex
 from threading import Thread
+from master import synchronizer
 
 
 def build_graph(graph_size, pick_edge_prob, udp_port, tcp_port):
@@ -36,7 +37,7 @@ def vertices_input(graph, udp_port_master):
         in_neighbor = graph[v]['in_neighbor']
         out_neighbors = graph[v]['out_neighbors']
 
-        input_file_name = 'input_vertex_' + str(v)+'.txt'
+        input_file_name = './simulation_files/input_vertex_' + str(v)+'.txt'  # Eldar and Naveh changed this path
         input_file = open(input_file_name, 'w')
 
         input_file.write(str(len(graph)) + '\n')
@@ -82,6 +83,9 @@ def main():
 
     for thread in threads:
         thread.start()
+
+    synchro = synchronizer(graph_size=graph_size, udp_port=udp_port_start)
+
     for thread in threads:
         thread.join()
 

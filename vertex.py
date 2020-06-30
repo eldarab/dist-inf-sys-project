@@ -1,11 +1,22 @@
+from socket import socket, AF_INET, SOCK_DGRAM, SOCK_STREAM
+from threading import Thread
+from warnings import warn
+INPUT_FILEPATH_PREFIX = './simulation_files/input_vertex_'
+OUTPUT_FILEPATH_PREFIX = './simulation_files/input_vertex_'
+FILEPATH_SUFFIX = '.txt'
+
+
 def vertex(ID):
-    pass
+    filepath = INPUT_FILEPATH_PREFIX + str(ID) + FILEPATH_SUFFIX
+    v = Vertex(filepath, ID)
+    v.listen_to_master()
+    if v.current_round == 1:
 
 
 class Vertex:
-    def __init__(self, filepath):
+    def __init__(self, filepath, ID):
         with open(filepath, 'r') as f:
-            self.ID = 0  # TODO add ID
+            self.ID = ID  # TODO add ID
             self.n_graph_nodes = int(f.readline()[:-1])
             self.master_UDP = int(f.readline()[:-1])
             self.master_IP = f.readline()[:-1]  # IP is string
@@ -26,18 +37,40 @@ class Vertex:
                 self.out_neighbours_IP.append(f.readline()[:-1])
                 line = f.readline()[:-1]
 
-    def send_message(self, message, port):
-        """
-        Sends a message to a neighbour and writes it to a file
-        :param message: The message content to send
-        :param port: The TCP port the neighbour is listening to in order to receive messages
-        """
+            self.current_round = 0
+            self.color = self.ID
+
+    def send_message(self, message, ip, port):
         # TODO maybe use socket?
-        if port != self.in_neighbour_TCP and port not in self.out_neighbours_TCP:
-            raise Exception('Receiver is not a neighbour')
-        output_filepath = './files/output_vertex_' + str(self.ID) + '.txt'
+        sock_tcp = socket(AF_INET, SOCK_STREAM)
+        sock_tcp.sendto(str(message).encode(), (ip, port))
+        sock_tcp.close()
+
+        output_filepath = OUTPUT_FILEPATH_PREFIX + str(self.ID) + FILEPATH_SUFFIX
         with open(output_filepath, 'a') as f:
             f.write(message + '_' + str(port))
 
+    def listen_to_master(self):
+        # TODO maybe put lock here
+        sock_udp = socket(AF_INET, SOCK_DGRAM)
+        sock_udp.bind((self.master_IP, self.master_UDP))
+        # sock_udp.listen()  # TODO maybe we need this?
 
-v0001 = Vertex('./files/input_vertex_0001.txt')
+        data, addr = sock_udp.recvfrom(4096)
+        sock_udp.close()
+
+        return repr(data)
+
+    def send_color_to_children(self):
+        threads = []
+        for neighbour_ip, neighbour_tcp in zip(self.out_neighbours_IP, self.out_neighbours_TCP):
+            threads.append(Thread(target=self.send_message, args=(self.color, neighbour_ip, neighbour_tcp)))
+        for thread in threads:
+            thread.start()
+        for thread in threads:
+            thread.join()
+
+
+
+# v0001 = Vertex('./files/input_vertex_0001.txt')
+# pass
