@@ -68,7 +68,7 @@ def main():
     except:
         print('ERROR--graph size')
 
-    random.seed(45970)
+    random.seed(6969)
     pick_edge_prob = 0.8
     udp_port_start = 31000
     tcp_port_start = 41000

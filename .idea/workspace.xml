@@ -21,9 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac3165d8-6360-4b6d-89bd-02e605790ab4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/echo-server.py" beforeDir="false" afterPath="$PROJECT_DIR$/echo-server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulate.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vertex.py" beforeDir="false" afterPath="$PROJECT_DIR$/vertex.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +141,7 @@
       <workItem from="1590523958044" duration="2139000" />
       <workItem from="1593503545214" duration="3066000" />
       <workItem from="1593507115201" duration="598000" />
-      <workItem from="1593537675986" duration="7277000" />
+      <workItem from="1593537675986" duration="8278000" />
     </task>
     <task id="LOCAL‎00001" summary="Added project files&#10;Exactly as downloaded from Moodle">
       <created>1590524259750</created>
@@ -181,7 +179,13 @@
       <option name="presentableId" value="LOCAL‎00006" />
       <updated>1590525877262</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎00007" summary="Hopefully almost final version">
+      <created>1593545187011</created>
+      <option name="number" value="LOCAL‎00007" />
+      <option name="presentableId" value="LOCAL‎00007" />
+      <updated>1593545187011</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +210,8 @@
     <MESSAGE value="committed idea files" />
     <MESSAGE value="added vertex.py module" />
     <MESSAGE value="added project instructions and ignored it" />
-    <option name="LAST_COMMIT_MESSAGE" value="added project instructions and ignored it" />
+    <MESSAGE value="Hopefully almost final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hopefully almost final version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="845" y="383" width="525" height="408" key="#Notifications" timestamp="1590524416284">
@@ -217,33 +222,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593504855528" />
-    <state x="521" y="95" key="CommitChangelistDialog2" timestamp="1590525876751">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="208" y="0" key="CommitChangelistDialog2" timestamp="1593545184901">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="208" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1593545184901" />
     <state x="521" y="95" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525876751" />
     <state x="182" y="95" key="DiffContextDialog" timestamp="1590525873437">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="182" y="95" key="DiffContextDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525873437" />
-    <state width="1237" height="233" key="GridCell.Tab.0.bottom" timestamp="1593544178122">
+    <state width="1237" height="233" key="GridCell.Tab.0.bottom" timestamp="1593545918514">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="233" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593544178122" />
+    <state width="1237" height="233" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1593545918514" />
     <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593506128781" />
-    <state width="1237" height="233" key="GridCell.Tab.0.center" timestamp="1593544178122">
+    <state width="1237" height="233" key="GridCell.Tab.0.center" timestamp="1593545918514">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="233" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593544178122" />
+    <state width="1237" height="233" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1593545918514" />
     <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593506128780" />
-    <state width="1237" height="233" key="GridCell.Tab.0.left" timestamp="1593544178122">
+    <state width="1237" height="233" key="GridCell.Tab.0.left" timestamp="1593545918514">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="233" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593544178122" />
+    <state width="1237" height="233" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1593545918514" />
     <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593506128780" />
-    <state width="1237" height="233" key="GridCell.Tab.0.right" timestamp="1593544178122">
+    <state width="1237" height="233" key="GridCell.Tab.0.right" timestamp="1593545918514">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="233" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593544178122" />
+    <state width="1237" height="233" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1593545918514" />
     <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593506128781" />
     <state width="1237" height="182" key="GridCell.Tab.1.bottom" timestamp="1593538919909">
       <screen x="0" y="0" width="1280" height="680" />
@@ -269,9 +275,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593503710943" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1590525878468">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="368" y="146" key="Vcs.Push.Dialog.v2" timestamp="1593545189797">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="368" y="146" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1593545189797" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1590525878468" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1590525267453">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -281,15 +288,19 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1593542917634" />
-    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup" timestamp="1593541708675">
+    <state x="106" y="0" width="585" height="680" key="find.popup" timestamp="1593545458348">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593541708675" />
+    <state x="106" y="0" width="585" height="680" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1593545458348" />
+    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup" timestamp="1593545464066">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="415" y="147" width="672" height="444" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593545464066" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1593504605787" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/dist_inf_sys_project$simulate.coverage" NAME="simulate Coverage Results" MODIFIED="1593544168771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/dist_inf_sys_project$master.coverage" NAME="master Coverage Results" MODIFIED="1593544173501" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dist_inf_sys_project$simulate.coverage" NAME="simulate Coverage Results" MODIFIED="1593545862745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dist_inf_sys_project$master.coverage" NAME="master Coverage Results" MODIFIED="1593545907975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dist_inf_sys_project$vertex.coverage" NAME="vertex Coverage Results" MODIFIED="1593535081334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
